@@ -1,0 +1,17 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.card-shadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.field_with_errors {
+  display: flex !important;
+  background-color: rgba(215, 52, 65, 0.2) !important;
+  border-radius: 5px;
+}
+
+#error_explanation {
+  width: 100% !important;
+}
