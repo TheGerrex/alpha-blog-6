@@ -1,13 +1,13 @@
 <div class="row justify-content-center">  
   <div class="col-md-8">
-    <% if @article.errors.any? %>
+    <% if obj.errors.any? %>
       <div class="alert alert-danger alert-dismissible fade show mt-3">
         <div class="col-md-8">
           <div>
-            <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+            <h2><%= pluralize(obj.errors.count, "error") %> prohibited this article from being saved:</h2>
 
             <ul>
-              <% @article.errors.each do |error| %>
+              <% obj.errors.each do |error| %>
                 <li><%= error.full_message %></li>
               <% end %>
             </ul>
