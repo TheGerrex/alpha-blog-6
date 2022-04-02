@@ -6,6 +6,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'  %>
 
@@ -15,7 +18,7 @@
   <body class="d-flex flex-column min-vh-100">
     <%= render "layouts/nav"%>
     <%= render "layouts/messages" %>
-    <div class="container pt-3 h-100">
+    <div class="container pt-3">
       <%= yield %>
     </div>
     <%= render "layouts/footer"%>

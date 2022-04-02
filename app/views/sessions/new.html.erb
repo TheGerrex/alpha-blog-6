@@ -1,0 +1,21 @@
+<h1 class="text-center">Log In</h1>
+
+
+<%= form_with(scope: :session, url: login_path) do |form| %>
+  <div class="form-group row justify-content-center align-items-center mt-3">
+    <div class="col-md-8">
+      <div class="mb-3">
+        <%= form.label :email, class: "form-label"%>
+        <%= form.text_field :email, class: "form-control", placeholder: "Enter your email address" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :password, class: "form-label"%>
+        <%= form.password_field :password, class: "form-control", placeholder: "Enter your password" %>
+      </div>
+      <div class="mb-3">
+        <%= form.submit("Login", class: "btn btn-primary") %>
+        <%= link_to 'Back', articles_path, class: "btn btn-outline-danger" %>
+      </div>
+    </div>
+  </div>
+<% end %>

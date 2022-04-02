@@ -1,0 +1,30 @@
+<h1>Alpha Bloggers</h1>
+<%= will_paginate @users, class: 'apple_pagination'%>
+<% @users.each do |user|%>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card text-center my-3 card-shadow">
+          <div class="card-body">
+            <%= link_to gravatar_for(user, size: 150), user%>
+            <h5 class="card-title"><%= link_to user.username, user %></h5>
+            <%= link_to 'View profile', user, class: 'btn btn-sm btn-secondary' %>
+            <% if logged_in? %>
+              <% if user == current_user %>
+                <%= link_to 'Edit profile', edit_user_path(user), class: 'btn btn-sm btn-success'%>
+              <% end %>
+              <% if current_user.admin? %>
+                <%= link_to 'Delete profile', user_path(user), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure you want to delete this user and all associated articles?" }%>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="card-footer text-muted d-flex justify-content-between align-items-center">
+            <small><%= pluralize(user.articles.count, "article") %></small>
+            <small class="mb-0">Joined: <%= time_ago_in_words(user.created_at) %> ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= will_paginate @users, class: 'apple_pagination'%>
