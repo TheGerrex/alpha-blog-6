@@ -17,6 +17,13 @@
         </div>
       </div>
       <div class="mb-3">
+        <%= form.label :category, class: "form-label" %>
+        <%= form.collection_select(:category_ids, Category.all, :id, :name,  {:prompt => ""}, {:multiple => true, class: "form-select"}) %>
+        <div class="form-text">
+          Make your selection from the list above (can be empty)
+        </div>
+      </div>
+      <div class="mb-3">
         <%= form.submit class: "btn btn-primary"%>
         <%= link_to 'Back', articles_path, class: "btn btn-outline-danger" %>
       </div>

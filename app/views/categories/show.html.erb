@@ -1,0 +1,19 @@
+
+
+<div class="row justify-content-center">
+  <div class="col-12 bg-light py-5 rounded border">
+    <h1 class="text-center fs-1"><%= @category.name %></h1>
+    <div class="mt-2 text-center">
+      <% if logged_in? && current_user.admin? %>
+        <%= link_to "Edit category name", edit_category_path(@category), class: "btn btn-sm btn-success"%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="mt-5">
+  <h3 class="text-center">Articles</h3>
+  <%= will_paginate @articles, class: 'apple_pagination'%>
+  <%= render "articles/article" %>
+  <%= will_paginate @articles, class: 'apple_pagination'%>
+</div>

@@ -1,0 +1,17 @@
+<%= render "shared/errors", obj: @category %>
+<%= form_with(model: @category) do |form| %>
+  <div class="form-group row justify-content-center align-items-center mt-3">
+    <div class="col-md-8">
+      <div class="mb-3">
+        <%= form.label :name, "Category name", class: "form-label" %>
+        <%= form.text_field :name, class: "form-control", placeholder: "Travel, Sports, Music, etc..."  %>
+        <div class="form-text">
+          It cannot be less than 3 characters or more than 26 characters.
+        </div>
+      </div>
+      <div class="mb-3">
+        <%= form.submit class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>

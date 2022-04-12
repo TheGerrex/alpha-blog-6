@@ -5,6 +5,9 @@
         <div class="card text-center my-3 card-shadow">
           <div class="card-body">
             <h5 class="card-title"><%= article.title %></h5>
+            <% if article.categories.any? %>
+                <%= render article.categories %>
+            <% end %>
             <p class="card-text" style="max-width: 300px; margin: 20px auto;"><%= truncate(article.description, length: 100) %></p>
             <%= link_to 'View', article, class: 'btn btn-sm btn-secondary' %>
             <% if logged_in? && (article.user == current_user || current_user.admin?) %>
